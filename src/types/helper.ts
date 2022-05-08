@@ -1,5 +1,4 @@
 import { cloneDeep } from 'lodash'
-import { ImportMetaEnv } from 'types/viteEnv'
 
 class Helper {
   public envs = {} as ImportMetaEnv

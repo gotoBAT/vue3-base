@@ -1,6 +1,6 @@
 import { cloneDeep } from 'lodash'
-
-export const parseEnv = (env: Record<string, string>) => {
+import { ViteEnv } from '../types/viteEnv'
+export function parseEnv(env: Record<string, string>): ViteEnv {
   const envs: any = cloneDeep(env)
   Object.entries(envs).forEach(([key, value]) => {
     if (value == 'true' || value == 'false')

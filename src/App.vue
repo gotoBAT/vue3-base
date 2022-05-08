@@ -1,9 +1,9 @@
 <script setup lang="ts">
-console.log(import.meta.env.VITE_ROUTE_AUTOLOAD)
+
 </script>
 
 <template>
-  <ul>
+  <ul class="bg-red-600">
     <li>1</li>
     <li>2</li>
     <li>3</li>

@@ -1,5 +1,5 @@
 import { RouteRecordRaw } from 'vue-router'
-
+import { envs } from '@/utils/helper'
 const layout = import.meta.globEager('@/layouts/*.vue')
 const views = import.meta.globEager('@/views/**/*.vue')
 // 自动注册路由
@@ -31,7 +31,9 @@ function getRootRoutes(filename: string, module: { [key: string]: any }) {
     path: `/${name}`,
     component: module.default
   }
-  return Object.assign(route,module.default?.route)
+  return Object.assign(route, module.default?.route)
 }
-
-export default getLayoutRoutes()
+const routes = envs.VITE_ROUTER_AUTOLOAD
+  ? getLayoutRoutes()
+  : ([] as RouteRecordRaw[])
+export default routes

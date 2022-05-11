@@ -1,5 +1,5 @@
 import { RouteRecordRaw } from 'vue-router'
-import { envs } from '@/utils/helper'
+import { envs } from '@/utils'
 const layout = import.meta.globEager('@/layouts/*.vue')
 const views = import.meta.globEager('@/views/**/*.vue')
 // 自动注册路由

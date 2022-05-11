@@ -33,7 +33,9 @@
           </div>
           <hdButton />
           <div class="flex justify-center mt-3">
-            <i class="fa fa-wechat bg-green-500 text-white rounded-md p-1 cursor-pointer"></i>
+            <i
+              class="fa fa-wechat bg-green-500 text-white rounded-md p-1 cursor-pointer"
+            ></i>
           </div>
           <div class="flex gap-2 justify-center mt-5">
             <hdLink class="hd-link" title="会员注册" />
@@ -48,11 +50,22 @@
 
 <script setup lang="ts">
 import v from '@/plugins/validate'
+import userApi from '@/apis/userApi'
+import { store } from '@/utils'
 const { Form, Field, ErrorMessage } = v
-const onSubmit = (value: any) => {
-  console.log(value)
-  alert('验证通过')
+const onSubmit = async (value: any) => {
+  const {
+    result: { token }
+  } = await userApi.login(value)
+  store.set('token', {
+    token,
+    expire: 3000
+  })
 }
+/* const schema = v.yup.object({
+  account: v.yup.string().required().email().label('密码'),
+  password: v.yup.string().required().min(3).label('密码')
+}) */
 const schema = {
   account: {
     required: true,
@@ -60,10 +73,6 @@ const schema = {
   },
   password: { required: true, min: 3 }
 }
-/* const schema = v.yup.object({
-  account: v.yup.string().required().email().label('密码'),
-  password: v.yup.string().required().min(3).label('密码')
-}) */
 </script>
 
 <style lang="scss" scoped>

@@ -1,4 +1,5 @@
 // test.ts
+import { Random } from 'mockjs'
 import { MockMethod } from 'vite-plugin-mock'
 export default [
   {
@@ -18,13 +19,15 @@ export default [
     }
   },
   {
-    url: '/api/post',
+    url: '/api/login',
     method: 'post',
     timeout: 2000,
     response: {
-      code: 0,
-      data: {
-        name: 'vben'
+      code: 200,
+      type: 'success',
+      message: '登录成功',
+      result: {
+        token: Random.string(10)
       }
     }
   },

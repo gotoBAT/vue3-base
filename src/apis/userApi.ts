@@ -10,5 +10,14 @@ const getUser = () => {
     url: 'user/info'
   })
 }
-const login = () => {}
+interface loginInterface {
+  token: string
+}
+const login = (data: any) => {
+  return http.request<loginInterface>({
+    method: 'POST',
+    url: 'login',
+    data
+  })
+}
 export default { getUser, login }

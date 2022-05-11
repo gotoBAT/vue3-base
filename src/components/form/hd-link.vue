@@ -1,9 +1,11 @@
 <template>
-  <a href="#">会员注册</a>
+  <a href="#">{{ title }}</a>
 </template>
 
 <script setup lang="ts">
-
+const prop = defineProps({
+  title: String
+})
 </script>
 
 <style lang="scss" scoped>

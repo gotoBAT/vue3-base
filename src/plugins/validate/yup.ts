@@ -11,7 +11,7 @@ yup.setLocale({
     max: '不能大于 ${max} 位'
   },
   number: {
-    min: '${label}}不能少于 ${min} ',
+    min: '${label}不能少于 ${min} ',
     max: '不能大于 ${max} '
   }
 })

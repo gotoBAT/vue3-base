@@ -13,7 +13,7 @@ const prop = defineProps({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .hd-input {
   @apply w-full px-3 py-2 mt-8 outline-none border border-gray-300 rounded-md focus:ring-4 ring-offset-2 ring-violet-500 focus:border-white duration-300;
 }

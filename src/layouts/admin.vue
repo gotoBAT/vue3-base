@@ -1,4 +1,6 @@
-<template>admin.vue</template>
+<template>
+  <router-view />
+</template>
 
 <script setup lang="ts"></script>
 

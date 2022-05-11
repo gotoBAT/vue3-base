@@ -6,7 +6,7 @@
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .hd-link {
   @apply text-base text-gray-700 hover:text-violet-400;
 }

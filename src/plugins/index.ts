@@ -1,5 +1,6 @@
 import { App } from 'vue'
 import { setupTailwindCSS } from './tailwindcss'
+import setupElementPlus from './elementui'
 import { camelCase } from 'lodash'
 function autoRegisterComponents(app: App) {
   const commonComponents = import.meta.globEager('../components/form/*.vue')
@@ -11,4 +12,5 @@ function autoRegisterComponents(app: App) {
 export function setupPlugins(app: App) {
   autoRegisterComponents(app)
   setupTailwindCSS()
+  setupElementPlus(app)
 }

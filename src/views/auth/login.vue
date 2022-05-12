@@ -34,7 +34,7 @@
           <hdButton />
           <div class="flex justify-center mt-3">
             <i
-              class="fa fa-wechat bg-green-500 text-white rounded-md p-1 cursor-pointer"
+              class="fab fa-weixin bg-green-500 text-white rounded-md p-1 cursor-pointer"
             ></i>
           </div>
           <div class="flex gap-2 justify-center mt-5">

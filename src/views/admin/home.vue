@@ -1,4 +1,4 @@
-<template>user.vue</template>
+<template>admin - home</template>
 
 <script setup lang="ts"></script>
 

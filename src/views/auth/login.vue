@@ -52,16 +52,9 @@
 import v from '@/plugins/validate'
 import userApi from '@/apis/userApi'
 import { store } from '@/utils'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const { Form, Field, ErrorMessage } = v
-const onSubmit = async (value: any) => {
-  const {
-    result: { token }
-  } = await userApi.login(value)
-  store.set('token', {
-    token,
-    expire: 3000
-  })
-}
 /* const schema = v.yup.object({
   account: v.yup.string().required().email().label('密码'),
   password: v.yup.string().required().min(3).label('密码')
@@ -73,6 +66,17 @@ const schema = {
   },
   password: { required: true, min: 3 }
 }
+const onSubmit = async (value: any) => {
+  const {
+    result: { token }
+  } = await userApi.login(value)
+  store.set('token', {
+    token,
+    // 秒
+    expire: 3000
+  })
+  router.push({ name: 'home' })
+}
 </script>
 
 <style lang="scss" scoped>
@@ -80,3 +84,11 @@ form {
   @apply bg-slate-300 h-screen flex justify-center items-center p-5;
 }
 </style>
+<script lang="ts">
+export default {
+  route: {
+    name: 'login',
+    meta: { guest: true }
+  }
+}
+</script>

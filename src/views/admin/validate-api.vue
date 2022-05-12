@@ -42,3 +42,12 @@ section {
   }
 }
 </style>
+<script lang="ts">
+export default {
+  route: {
+    meta: {
+      requiresAuth: true
+    }
+  }
+}
+</script>

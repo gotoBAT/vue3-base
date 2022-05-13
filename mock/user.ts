@@ -11,9 +11,9 @@ export default [
         type: 'success',
         message: '请求成功',
         result: {
-          name: 'vben',
+          name: '吴天生',
           age: 18,
-          avatar: 'hd/os/1.jpg'
+          avatar: '/images/cartoon-avatar.jpeg'
         }
       }
     }

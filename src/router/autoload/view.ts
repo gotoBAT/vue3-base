@@ -33,7 +33,4 @@ function getRootRoutes(filename: string, module: { [key: string]: any }) {
   }
   return Object.assign(route, module.default?.route)
 }
-const routes = envs.VITE_ROUTER_AUTOLOAD
-  ? getLayoutRoutes()
-  : ([] as RouteRecordRaw[])
-export default routes
+export default getLayoutRoutes

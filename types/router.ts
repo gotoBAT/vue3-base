@@ -6,5 +6,10 @@ declare module 'vue-router' {
     requiresAuth?: boolean
     // 是否是游客
     guest?: boolean
+    // 菜单相关
+    title?: string
+    icon?: string
+    show?: boolean
+    isClick?: boolean
   }
 }

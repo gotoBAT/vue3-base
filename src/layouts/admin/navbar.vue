@@ -1,4 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import userStore from '@/store/user'
+const user = userStore().userInfo
+</script>
 
 <template>
   <div class="bg-white p-3 px-5 flex justify-between items-center">
@@ -8,11 +11,8 @@
     </el-breadcrumb>
 
     <div class="flex justify-center items-center relative group cursor-pointer">
-      <img
-        src="/images/cartoon-avatar.jpeg"
-        class="w-8 h-8 rounded-full object-cover"
-      />
-      <span class="ml-1 text-sm text-gray-600">吴天生</span>
+      <img :src="user?.avatar" class="w-8 h-8 rounded-full object-cover" />
+      <span class="ml-1 text-sm text-gray-600">{{ user?.name }}</span>
       <section
         class="group-hover:block absolute top-full bg-white shadow-sm px-5 whitespace-nowrap border rounded-md hidden"
       >

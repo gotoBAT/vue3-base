@@ -18,15 +18,15 @@ const links = ref<{ title: string }[]>([
 </script>
 
 <template>
-  <div class="hidden md:block">
-    <div class="m-5 grid grid-flow-col gap-3 justify-start">
+  <div class="hidden md:block p-3 border-t border-b bg-gray-50 shadow-sm">
+    <div class="grid grid-flow-col gap-3 justify-start">
       <a
         href="#"
         v-for="link of links"
-        class="bg-white rounded-md py-2 px-3 text-sm text-gray-600"
+        class="border hover:bg-violet-600 hover:text-white duration-300 bg-white rounded-sm shadow-sm py-2 px-3 text-sm text-gray-600"
       >
         {{ link.title }}
-        <i class="fas fa-times ml-1"></i>
+        <i class="fas fa-times ml-1 hover:text-yellow-400 cursor-pointer"></i>
       </a>
     </div>
   </div>

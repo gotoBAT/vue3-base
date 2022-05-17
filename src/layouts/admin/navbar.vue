@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import userStore from '@/store/user'
-const user = userStore().userInfo
+import userStore from '@/store/userStore'
+import { user } from '@/utils'
+const userInfo = userStore().userInfo
 </script>
 
 <template>
@@ -11,26 +12,36 @@ const user = userStore().userInfo
     </el-breadcrumb>
 
     <div class="flex justify-center items-center relative group cursor-pointer">
-      <img :src="user?.avatar" class="w-8 h-8 rounded-full object-cover" />
-      <span class="ml-1 text-sm text-gray-600">{{ user?.name }}</span>
+      <img :src="userInfo?.avatar" class="w-8 h-8 rounded-full object-cover" />
+      <span class="ml-1 text-sm text-gray-600">{{ userInfo?.name }}</span>
       <section
-        class="group-hover:block absolute top-full bg-white shadow-sm px-5 whitespace-nowrap border rounded-md hidden"
+        class="group-hover:block absolute right-0 z-50 top-full bg-white shadow-sm whitespace-nowrap border rounded-md hidden overflow-hidden"
       >
-        <div class="flex items-center cursor-pointer border-b py-3">
-          <a class="fas fa-ad"></a>
-          <span class="text-xs text-gray-600 ml-2">文档资料</span>
+        <div class="info-menu">
+          <a class="fas fa-paste"></a>
+          <span>文档资料</span>
         </div>
-        <div class="flex items-center cursor-pointer py-3 border-b">
-          <a class="fas fa-ad"></a>
-          <span class="text-xs text-gray-600 ml-2">用户管理</span>
+        <div class="info-menu">
+          <a class="fas fa-house-user"></a>
+          <span>网站首页</span>
         </div>
-        <div class="flex items-center cursor-pointer py-3">
-          <a class="fas fa-ad"></a>
-          <span class="text-xs text-gray-600 ml-2">会员中心</span>
+        <div class="info-menu border-none" @click="user.logout()">
+          <a class="fas fa-sign-out-alt"></a>
+          <span>退出登录</span>
         </div>
       </section>
     </div>
   </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.info-menu {
+  @apply flex items-center cursor-pointer border-b py-3 px-3 hover:bg-indigo-600 duration-300 hover:text-white ;
+  &:hover span {
+    @apply text-white;
+  }
+  span {
+    @apply text-xs text-gray-600 ml-2;
+  }
+}
+</style>

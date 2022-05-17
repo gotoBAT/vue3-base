@@ -19,6 +19,9 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "#/*": [
+        "./types/*"
       ]
     }
   },
@@ -30,7 +33,7 @@
     "vite.config.ts",
     "vite/**/*.ts",
     "mock/**/*.ts",
-    "types/*.d.ts",
-    "types/*.ts",
+    "types/**/*.d.ts",
+    "types/**/*.ts"
   ]
 }

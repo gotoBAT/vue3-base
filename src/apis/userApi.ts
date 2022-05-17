@@ -13,7 +13,11 @@ const getUser = () => {
 interface loginInterface {
   token: string
 }
-const login = (data: any) => {
+export interface ILoginData {
+  account: string
+  password: string
+}
+const login = (data: ILoginData) => {
   return http.request<loginInterface>({
     method: 'POST',
     url: 'login',

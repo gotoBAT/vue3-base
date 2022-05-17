@@ -2,6 +2,9 @@
 import MenuComponet from './admin/menu.vue'
 import NavBar from './admin/navbar.vue'
 import HistoryLink from './admin/historyLink.vue'
+import menuStore from '@/store/menuStore'
+const menu = menuStore()
+menu.init()
 </script>
 <template>
   <div class="admin w-screen min-h-screen flex">

@@ -50,10 +50,8 @@
 
 <script setup lang="ts">
 import v from '@/plugins/validate'
-import userApi from '@/apis/userApi'
-import { store } from '@/utils'
-import { useRouter } from 'vue-router'
-const router = useRouter()
+import { ILoginData } from '@/apis/userApi'
+import { user } from '@/utils'
 const { Form, Field, ErrorMessage } = v
 /* const schema = v.yup.object({
   account: v.yup.string().required().email().label('密码'),
@@ -66,16 +64,8 @@ const schema = {
   },
   password: { required: true, min: 3 }
 }
-const onSubmit = async (value: any) => {
-  const {
-    result: { token }
-  } = await userApi.login(value)
-  store.set('token', {
-    token
-    // 秒
-    // expire: 3000
-  })
-  router.push({ name: 'home' })
+const onSubmit = async (value: ILoginData) => {
+  await user.login(value)
 }
 </script>
 

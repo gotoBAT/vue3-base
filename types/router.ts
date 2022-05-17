@@ -1,4 +1,5 @@
 import 'vue-router'
+import { IMenu } from '#/menu'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -7,9 +8,6 @@ declare module 'vue-router' {
     // 是否是游客
     guest?: boolean
     // 菜单相关
-    title?: string
-    icon?: string
-    show?: boolean
-    isClick?: boolean
+    menu?: IMenu
   }
 }
